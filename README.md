@@ -1,17 +1,16 @@
 # spring-thymeleaf-demo
 Spring Boot Thymeleaf 使用デモ
 
-## 設計
-### 画面定義
-#### 画面一覧・パス
+## 画面定義
+### 画面一覧・パス
 
 |画面名|パス|
 |--|--|
-|トップ画面|/|
-|登録画面|/entry/input|
-|登録完了画面|/entry/complete|
+|トップ画面|`/`|
+|登録画面|`/entry/input`|
+|登録完了画面|`/entry/complete`|
 
-#### 画面遷移図
+### 画面遷移図
 
 ```mermaid
 stateDiagram-v2
@@ -23,30 +22,32 @@ stateDiagram-v2
 登録完了画面 --> トップ画面: トップページへ戻る<br>リンク押下
 ```
 
-#### 画面詳細定義
-##### トップ画面
-![](wiki/media/readme/top.png)
+### 画面詳細定義
+#### トップ画面
+##### 画面
+<img src="wiki/media/readme/top.png" style="border: 6px black solid;">
 
-###### イベント
+##### イベント
 |イベント|概要|補足|
 |--|--|--|
 |GET|ページを表示する|
 
-###### 部品
+##### 部品
 |種類|部品|概要|補足|
 |--|--|--|--|
 |リンク|登録ページへ|登録画面へ遷移する||
 
 
-##### 登録画面
-![](wiki/media/readme/input.png)
+#### 登録画面
+##### 画面
+<img src="wiki/media/readme/input.png" style="border: 6px black solid;">
 
-###### イベント
+##### イベント
 |イベント|概要|補足|
 |--|--|--|
 |GET|ページを表示する|
 
-###### 部品
+##### 部品
 |種類|部品|概要|補足|
 |--|--|--|--|
 |入力フォーム|名前|||
@@ -54,15 +55,16 @@ stateDiagram-v2
 |ボタン|登録する|登録完了画面にPOSTで遷移||
 |リンク|トップページへ戻る|トップページへ遷移する||
 
-##### 登録完了画面
-![](wiki/media/readme/complate.png)
+#### 登録完了画面
+##### 画面
+<img src="wiki/media/readme/complate.png" style="border: 6px black solid;">
 
-###### イベント
+##### イベント
 |イベント|概要|補足|
 |--|--|--|
 |POST|登録→ページ表示|
 
-###### 部品
+##### 部品
 |種類|部品|概要|補足|
 |--|--|--|--|
 |リンク|トップページへ戻る|トップページへ遷移する||
