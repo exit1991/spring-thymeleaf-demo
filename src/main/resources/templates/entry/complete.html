@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>完了画面</title>
+</head>
+<body>
+    <h1>完了画面</h1>
+    <p>登録が完了されました！</p>
+    <section>
+        <h2>登録内容</h2>
+        <ul th:object="${userEntry}">
+            <li th:text="*{userName}"></li>
+            <li th:text="*{birthday}"></li>
+        </ul>
+    </section>
+    <div>
+        <p><a th:href="@{/}">トップページへ戻る</a></p>
+    </div>
+</body>
+</html>

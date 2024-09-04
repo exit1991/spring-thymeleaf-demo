@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登録画面</title>
+</head>
+<body>
+    <h1>登録画面</h1>
+    <form th:action="@{/entry/complete}" th:method="post">
+        <div>
+            <label for="username">ユーザー名</label>
+            <input id="username" type="text" name="userName" placeholder="山田太郎">
+        </div>
+        <div>
+            <label for="birthday">生年月日</label>
+            <input id="birthday" type="date" name="birthday">
+        </div>
+        <button type="submit">登録する</button>
+    </form>
+    <div>
+        <p><a th:href="@{/}">トップページへ戻る</a></p>
+    </div>
+</body>
+</html>
