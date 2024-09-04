@@ -1,7 +1,7 @@
 FROM maven:3-eclipse-temurin-17 AS build
-COPY . .
-RUN mvn clean package -Dmaven.test.skip=true
+COPY ./ /home/app
+RUN cd /home/app && mvn clean package -Dmaven.test.skip=true
 FROM eclipse-temurin:17-alpine
-COPY --from=build /target/springthymeleafdemo-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /home/app/target/*-SNAPSHOT.jar /usr/local/lib/demo.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "/usr/local/lib/demo.jar"]
